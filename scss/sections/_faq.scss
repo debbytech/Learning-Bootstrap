@@ -1,0 +1,26 @@
+@use'../custom'as*;
+@use'../components/mixins'as*;
+
+
+.accordion-item {
+  border-radius: 8px;       /* adjust to your liking */
+  overflow: hidden;          /* required to clip corners cleanly */
+  border: none;              /* optional — removes the default border */
+  transition: transform 180ms ease;
+  transform-origin: center;
+
+  &:hover {
+    transform: scale(1.03) ;
+  }
+}
+
+.accordion-button {
+  border-radius: 8px !important;
+  
+  
+}
+
+.accordion-button:not(.collapsed) {
+  border-radius: 8px !important;
+  box-shadow: none;          /* optional */
+}

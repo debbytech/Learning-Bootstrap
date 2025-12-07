@@ -1,0 +1,86 @@
+@use'../custom'as*;
+@use'../components/mixins'as*;
+
+.testimonials {
+  position: relative;
+  padding:0;
+  overflow: hidden;
+  @include gradient;
+
+  &__card {
+    background-color: rgba($white, 0.6);
+    padding: 2rem 1.25rem;
+    border-radius: 0.625rem;
+    height: auto;
+    text-align: center;
+
+    i {
+      font-size: 1.5rem;
+      color: rgba($primary, 0.7);
+      }
+
+    .ratings {
+
+
+      i {
+        color: rgba($primary, 0.7);
+        font-size: 1rem;
+      }
+
+      .hero-wave {
+
+  margin-bottom: -2px;
+
+ 
+}
+
+.hero-wave svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  
+}
+
+    }
+  }
+
+  &__picture {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+
+    img {
+      border: 0.25rem solid rgba($primary, 0.7);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 500;
+    color: $white;
+    font-family: 'Poppins', sans-serif;
+
+    h3 {
+      padding-top: .8rem;
+      text-transform: capitalize;
+    }
+
+    p {
+      padding-bottom: .5rem;
+      text-transform: capitalize;
+    }
+  }
+}

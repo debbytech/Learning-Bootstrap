@@ -1,0 +1,194 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.footer {
+  padding-top: 1rem;
+  background-color: $footer;
+}
+
+//style the contact-box content
+
+.contact-box {
+  position: relative;
+  display: flex;
+  align-items: flex-start;   // keeps icons aligned to the top of the text
+  gap: 0.5rem;                 // clean spacing between icon + text
+
+  &__icon {
+    width: 2rem;
+    stroke: $secondary;
+    flex-shrink: 0;
+    padding: 0.4rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 3rem;
+    }
+    
+
+     svg {
+      width: 30px;
+      height: 30px;
+
+      @include media-breakpoint-up(sm) {
+      width: 36px;
+      height: 36px;
+    }
+    
+      
+    }
+
+  }
+
+  &__info {
+    padding: 0.4rem;
+    font-weight: 600;
+
+
+    &--title {
+      color: $white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: block;
+      overflow-wrap: break-word;   // cleaner than break-all
+      word-break: break-word;
+      font-family: 'Oswald', sans-serif;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.4rem;
+      }
+
+    }
+
+    &--subtitle {
+      color: $gray-600;
+      text-decoration: none;
+      margin: 0.2rem 0 0;
+      font-size: 0.8rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1rem;
+      }
+
+    }
+  }
+}
+
+//style the social media contents
+
+.footer-sm {
+
+  a {
+    color: $white;
+
+    i {
+      font-size: 1rem;
+      margin-left: 1rem;
+
+      @include media-breakpoint-up(sm) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+//style the company info contents
+
+h5 {
+    font-family: "Oswald", sans-serif;
+    font-size: 0.95rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1.25rem; }
+  }
+
+  p {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    font-size: 0.8rem;
+
+    @include media-breakpoint-up(sm) {
+      font-size: 1rem;
+    }
+  }
+
+.company-list {
+  display: block;
+  list-style-type: none;
+  position: relative;
+
+  
+
+  li {
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    
+
+    a {
+      color: $white;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+
+      @include media-breakpoint-up(sm) {
+      font-size: 1rem;
+    }
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+
+//style the copyright content
+
+.footer-bottom {
+ background-color: $black;
+
+ &__copyright {
+  color: $gray-600;
+  font-weight: 400;
+
+  a {
+    color: $gray-300;
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary;
+      text-decoration: underline;
+    }
+
+  }
+ }
+}
+
+//style back to top button
+
+.scroll-buttons {
+  position: fixed;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  
+  gap: 0.7rem;   // spacing between the two buttons
+}
+
+.scroll-btn {
+  width: 3rem;
+  height: 3rem;
+  background-color: $secondary;   // your fill color
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  border-radius: 50%;
+  cursor: pointer;
+   text-decoration: none;
+}
+
+.scroll-btn i {
+  font-size: 1rem;
+  color: $white;
+}

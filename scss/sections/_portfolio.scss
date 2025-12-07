@@ -1,0 +1,75 @@
+@use'../custom'as*;
+@use'../components/mixins'as*;
+
+.portfolio {
+  padding: 4rem 0;
+
+  button {
+    text-transform: capitalize;
+  }
+}
+
+.portfolio-box {
+  position: relative;
+  width:100%;
+  height: 20.5rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 1.2rem;
+  border-top: 0.5rem solid $purple-light;
+  
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @include transitionProperties;
+    transform: scale(1);
+  }
+
+  
+  .portfolio-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.6);
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    
+
+    .caption {
+      h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-family: 'Oswald', sans-serif;
+        display: block;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 0;
+      }
+    }
+  }
+&:hover {
+
+  img {
+    transform: scale(1.06);
+    @include transitionProperties;
+  }
+
+  .portfolio-info{
+    visibility: visible;
+    opacity: 1;
+    @include transitionProperties;
+  }
+
+}
+}
