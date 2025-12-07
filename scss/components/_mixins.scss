@@ -1,0 +1,42 @@
+@use '../custom' as *;
+
+//Gradient Mixing
+
+@mixin gradient {
+  background: linear-gradient(to right, rgba($primary, 0.95), rgba($secondary, 0.95));
+}
+
+//Absolute Centering Mixin
+
+@mixin absoluteCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Transition Mixin
+@mixin transitionProperties {
+  transition-property: all;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-in;
+}
+
+// Reusable hover + mouse-leave mixin
+@mixin hoverLeave(
+  $hover-transform: scale(1.05),
+  $leave-transform: scale(1),
+  $hover-duration: 300ms,
+  $leave-duration: 600ms,
+  $hover-ease: ease-out,
+  $leave-ease: ease-in
+) {
+  // Base (mouse-leave) state
+  transform: $leave-transform;
+  transition: transform $leave-duration $leave-ease;
+
+  &:hover {
+    transform: $hover-transform;
+    transition: transform $hover-duration $hover-ease;
+  }
+}
